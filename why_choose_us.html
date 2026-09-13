@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main> :first-child {
+        margin-top: 0 !important;
+      }
+
+      main> :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-on-surface": "#eff1f3", "surface-container-low": "#f2f4f6", "background": "#f7f9fb", "on-surface-variant": "#44474d", "on-secondary": "#ffffff", "surface-container-lowest": "#ffffff", "outline": "#75777e", "on-tertiary-container": "#75859d", "on-secondary-container": "#f9f7ff", "surface": "#f7f9fb", "primary-container": "#0d1c32", "surface-tint": "#515f78", "error": "#ba1a1a", "surface-dim": "#d8dadc", "inverse-surface": "#2d3133", "on-primary": "#ffffff", "on-error": "#ffffff", "secondary-fixed": "#dae1ff", "on-error-container": "#93000a", "surface-variant": "#e0e3e5", "outline-variant": "#c5c6cd", "on-primary-fixed": "#0d1c32", "surface-container-high": "#e6e8ea", "surface-container": "#eceef0", "on-primary-fixed-variant": "#39475f", "primary-fixed": "#d6e3ff", "on-background": "#191c1e", "primary": "#000000", "surface-bright": "#f7f9fb", "on-primary-container": "#76849f", "on-tertiary-fixed": "#0b1c30", "on-secondary-fixed-variant": "#003fa4", "error-container": "#ffdad6", "secondary": "#0050cc", "primary-fixed-dim": "#b9c7e4", "secondary-fixed-dim": "#b3c5ff", "tertiary": "#000000", "on-tertiary-fixed-variant": "#38485d", "on-secondary-fixed": "#001849", "inverse-primary": "#b9c7e4", "tertiary-fixed": "#d3e4fe", "secondary-fixed-dim": "#b3c5ff", "tertiary-fixed-dim": "#b7c8e1", "tertiary-container": "#0b1c30", "surface-container-highest": "#e0e3e5", "on-tertiary": "#ffffff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-mobile": "1.5rem", "grid-columns": "12", "gutter": "1.5rem", "space-unit-4": "1.5rem", "space-unit-2": "0.5rem", "space-unit-6": "3rem", "space-unit-8": "4rem", "space-unit-3": "1rem", "space-unit-5": "2rem", "margin-desktop": "3rem", "space-unit-1": "0.25rem", "container-max": "1280px" }, "fontFamily": { "headline-xl": ["Inter"], "headline-lg": ["Inter"], "headline-sm": ["Inter"], "label-lg": ["Inter"], "body-md": ["Inter"], "label-md": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Inter"], "body-lg": ["Inter"] }, "fontSize": { "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-sm": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }] } } } }</script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+</head>
+
+<body class="bg-surface font-body-md text-on-surface">
+  <header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div
+      class="h-16 max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop flex items-center justify-between">
+      <div class="flex items-center gap-space-unit-3"><img alt="Business Logo" class="h-8 w-auto object-contain"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUxZd0s-ElQ5fyul-Alrl6ms1T9Y-aD8lm-B7Mhicj-nPOoaHCEPajTPwESNqkd0tl_yNP_LlK9wb4JII8OmJXQ6Ukwc9l71CWcC09Pa9MJH_7pLZjJJvy6-1t68Wjox6lB3Vr-ZqoFQFI-6j_Knk9L5t54Fe6OQwtlFNFFs7BRDtdi2Go9JpBnGPyKWwh6ZnWBOtj4dKTo2hjrtSIr3Hi674rbdNa5CaO94ja238_lyKbDINtLC2O" /><span
+          class="text-headline-sm font-bold text-on-surface tracking-tight">ENTERPRISE</span></div>
+      <nav class="hidden md:flex items-center gap-space-unit-6"
+        data-active-classes="bg-primary text-on-primary font-bold rounded-lg px-3 py-1.5"><a
+          class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="index"
+          href="#index.html">Home</a><a
+          class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="about"
+          href="#aboutus.html">About Us</a><a
+          class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="services"
+          href="#service.html">Services</a><a aria-current="page"
+          class="transition-colors bg-primary text-on-primary font-bold rounded-lg px-3 py-1.5" data-path="why-us"
+          href="#why_choose_us.html">Why Choose Us</a><a
+          class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact"
+          href="#contact.html">Contact</a></nav>
+      <div class="flex items-center gap-space-unit-2">
+        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span
+            class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
+      </div>
+    </div>
+  </header>
+  <main class="w-full pt-16 bg-surface">
+    <div class="flex flex-col w-full">
+      <!-- Hero Section -->
+      <section
+        class="relative px-margin-mobile lg:px-margin-desktop py-space-unit-8 bg-surface-container-low overflow-hidden">
+        <div
+          class="absolute inset-0 bg-gradient-to-tr from-surface-container via-transparent to-primary/5 pointer-events-none">
+        </div>
+        <div
+          class="max-w-container-max mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-space-unit-6 items-center">
+          <div class="lg:col-span-7 flex flex-col gap-space-unit-4">
+            <div
+              class="inline-flex items-center gap-space-unit-2 px-space-unit-3 py-space-unit-1 bg-surface-container-highest rounded-full w-fit">
+              <span class="material-symbols-outlined text-[18px] text-on-surface">verified</span>
+              <span class="text-label-md uppercase tracking-wider text-on-surface">Enterprise Excellence</span>
+            </div>
+            <h1 class="text-headline-xl font-headline-xl text-on-surface">
+              Engineered for Trust. <br /><span class="text-secondary">Proven by Results.</span>
+            </h1>
+            <p class="text-body-lg text-on-surface-variant max-w-2xl">
+              Discover why leading enterprises, financial institutions, and global brands partner with us to drive
+              secure, scalable, and high-performance operations.
+            </p>
+            <div class="flex flex-wrap gap-space-unit-3 pt-space-unit-2">
+              <a class="px-space-unit-5 py-space-unit-3 bg-primary text-on-primary text-label-lg font-bold rounded-lg shadow-sm hover:bg-on-surface transition-colors"
+                href="#metrics">Explore Metrics</a>
+              <a class="px-space-unit-5 py-space-unit-3 bg-surface-container-highest text-on-surface text-label-lg font-bold rounded-lg hover:bg-surface-dim transition-colors"
+                href="#contact">Schedule Consultation</a>
+            </div>
+          </div>
+          <div class="lg:col-span-5 relative">
+            <div class="w-full h-[380px] bg-cover bg-center rounded-xl shadow-md overflow-hidden relative"
+              data-alt="A sophisticated corporate boardroom meeting in a modern glass skyscraper overlooking a bustling financial district, with executives reviewing high-tech analytics dashboards under soft ambient lighting, rendered in clean enterprise tones of deep navy, slate gray, and crisp white."
+              style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDxV1H1zJi8y1tzi_E1MAWRd-OThECBO3WmlhehD74_RvJ7-US5xcqdrVqpu3YL3R_PeyaqgMVmvtb7ga1pDLg2NiH6BHcnT3UztWdKnOWfblzryTMUXkcFhjrMVYQWSY9iMVj4v4pv2qjOVZDrz3E1KywGpimkp883jgdvl8Rl1T5RMv1MUJihSuI6fdxxcTHXXsmnBjklGr492wRM2VyqV-ey9pIlVCWJ6cqeM9wT502SNTLvKXqX')">
+              <div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+              <div class="absolute bottom-6 left-6 right-6 p-4 bg-surface/90 backdrop-blur-md rounded-lg shadow-sm">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-label-md text-on-surface-variant uppercase tracking-wider">Client Retention Rate</p>
+                    <p class="text-headline-md text-on-surface font-bold">99.4%</p>
+                  </div>
+                  <span class="material-symbols-outlined text-[36px] text-secondary">trending_up</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Metrics Bar -->
+      <section class="px-margin-mobile lg:px-margin-desktop py-space-unit-6 bg-surface-container-lowest" id="metrics">
+        <div class="max-w-container-max mx-auto grid grid-cols-2 md:grid-cols-4 gap-space-unit-5 text-center">
+          <div class="p-space-unit-4 bg-surface-container-low rounded-xl">
+            <p class="text-headline-lg font-bold text-on-surface">15+</p>
+            <p class="text-body-sm text-on-surface-variant mt-1">Years Experience</p>
+          </div>
+          <div class="p-space-unit-4 bg-surface-container-low rounded-xl">
+            <p class="text-headline-lg font-bold text-on-surface">500+</p>
+            <p class="text-body-sm text-on-surface-variant mt-1">Global Enterprises</p>
+          </div>
+          <div class="p-space-unit-4 bg-surface-container-low rounded-xl">
+            <p class="text-headline-lg font-bold text-on-surface">99.99%</p>
+            <p class="text-body-sm text-on-surface-variant mt-1">Uptime SLA</p>
+          </div>
+          <div class="p-space-unit-4 bg-surface-container-low rounded-xl">
+            <p class="text-headline-lg font-bold text-on-surface">24/7</p>
+            <p class="text-body-sm text-on-surface-variant mt-1">Dedicated Support</p>
+          </div>
+        </div>
+      </section>
+      <!-- Detailed Breakdown Grid -->
+      <section class="px-margin-mobile lg:px-margin-desktop py-space-unit-8 bg-surface">
+        <div class="max-w-container-max mx-auto">
+          <div class="text-center max-w-2xl mx-auto mb-space-unit-8">
+            <span class="text-label-md uppercase tracking-wider text-secondary">Core Pillars</span>
+            <h2 class="text-headline-lg text-on-surface mt-space-unit-2">The Advantages That Set Us Apart</h2>
+            <p class="text-body-md text-on-surface-variant mt-space-unit-2">We combine technical mastery with rigorous
+              execution to deliver unparalleled business value.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-unit-6">
+            <!-- Card 1: Quality -->
+            <div
+              class="bg-surface-container-lowest p-space-unit-6 rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+              <div>
+                <div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center mb-space-unit-4">
+                  <span class="material-symbols-outlined text-[24px] text-on-secondary-fixed-variant"
+                    style="font-variation-settings: 'FILL' 1;">military_tech</span>
+                </div>
+                <h3 class="text-headline-sm text-on-surface mb-space-unit-2">Uncompromising Quality</h3>
+                <p class="text-body-md text-on-surface-variant">
+                  Every deliverable undergoes strict multi-tier quality audits and automated testing to ensure flawless
+                  performance and zero defects.
+                </p>
+              </div>
+              <div
+                class="mt-space-unit-6 pt-space-unit-4 flex items-center gap-space-unit-2 text-label-lg text-secondary font-bold">
+                <span>ISO 9001 Certified</span>
+                <span class="material-symbols-outlined text-[16px]">check_circle</span>
+              </div>
+            </div>
+            <!-- Card 2: Reliability -->
+            <div
+              class="bg-surface-container-lowest p-space-unit-6 rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+              <div>
+                <div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center mb-space-unit-4">
+                  <span class="material-symbols-outlined text-[24px] text-on-secondary-fixed-variant"
+                    style="font-variation-settings: 'FILL' 1;">security</span>
+                </div>
+                <h3 class="text-headline-sm text-on-surface mb-space-unit-2">Rock-Solid Reliability</h3>
+                <p class="text-body-md text-on-surface-variant">
+                  Built on redundant architecture and cloud-native infrastructure, guaranteeing 99.99% uptime for
+                  mission-critical workloads.
+                </p>
+              </div>
+              <div
+                class="mt-space-unit-6 pt-space-unit-4 flex items-center gap-space-unit-2 text-label-lg text-secondary font-bold">
+                <span>High Availability SLA</span>
+                <span class="material-symbols-outlined text-[16px]">shield</span>
+              </div>
+            </div>
+            <!-- Card 3: Professional Service -->
+            <div
+              class="bg-surface-container-lowest p-space-unit-6 rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+              <div>
+                <div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center mb-space-unit-4">
+                  <span class="material-symbols-outlined text-[24px] text-on-secondary-fixed-variant"
+                    style="font-variation-settings: 'FILL' 1;">support_agent</span>
+                </div>
+                <h3 class="text-headline-sm text-on-surface mb-space-unit-2">Professional Service</h3>
+                <p class="text-body-md text-on-surface-variant">
+                  Consultative approach from seasoned account directors and certified engineers who understand complex
+                  enterprise requirements.
+                </p>
+              </div>
+              <div
+                class="mt-space-unit-6 pt-space-unit-4 flex items-center gap-space-unit-2 text-label-lg text-secondary font-bold">
+                <span>Dedicated Account Team</span>
+                <span class="material-symbols-outlined text-[16px]">group</span>
+              </div>
+            </div>
+            <!-- Card 4: Experience -->
+            <div
+              class="bg-surface-container-lowest p-space-unit-6 rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+              <div>
+                <div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center mb-space-unit-4">
+                  <span class="material-symbols-outlined text-[24px] text-on-secondary-fixed-variant"
+                    style="font-variation-settings: 'FILL' 1;">timeline</span>
+                </div>
+                <h3 class="text-headline-sm text-on-surface mb-space-unit-2">15+ Years Experience</h3>
+                <p class="text-body-md text-on-surface-variant">
+                  Deep domain expertise across finance, healthcare, logistics, and enterprise tech, transforming
+                  industry challenges into opportunities.
+                </p>
+              </div>
+              <div
+                class="mt-space-unit-6 pt-space-unit-4 flex items-center gap-space-unit-2 text-label-lg text-secondary font-bold">
+                <span>Proven Track Record</span>
+                <span class="material-symbols-outlined text-[16px]">workspace_premium</span>
+              </div>
+            </div>
+            <!-- Card 5: Customer Support -->
+            <div
+              class="bg-surface-container-lowest p-space-unit-6 rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+              <div>
+                <div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center mb-space-unit-4">
+                  <span class="material-symbols-outlined text-[24px] text-on-secondary-fixed-variant"
+                    style="font-variation-settings: 'FILL' 1;">headset_mic</span>
+                </div>
+                <h3 class="text-headline-sm text-on-surface mb-space-unit-2">24/7 Customer Support</h3>
+                <p class="text-body-md text-on-surface-variant">
+                  Round-the-clock multi-channel assistance with rapid response times and direct escalation paths to
+                  senior engineering staff.
+                </p>
+              </div>
+              <div
+                class="mt-space-unit-6 pt-space-unit-4 flex items-center gap-space-unit-2 text-label-lg text-secondary font-bold">
+                <span>Sub-15m Response Time</span>
+                <span class="material-symbols-outlined text-[16px]">bolt</span>
+              </div>
+            </div>
+            <!-- Card 6: Commitment & Affordable Solutions (Spanning or paired) -->
+            <div
+              class="bg-surface-container-lowest p-space-unit-6 rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+              <div>
+                <div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center mb-space-unit-4">
+                  <span class="material-symbols-outlined text-[24px] text-on-secondary-fixed-variant"
+                    style="font-variation-settings: 'FILL' 1;">handshake</span>
+                </div>
+                <h3 class="text-headline-sm text-on-surface mb-space-unit-2">Total Commitment</h3>
+                <p class="text-body-md text-on-surface-variant">
+                  We align our success directly with yours. Long-term partnership models focused on continuous
+                  optimization and ROI delivery.
+                </p>
+              </div>
+              <div
+                class="mt-space-unit-6 pt-space-unit-4 flex items-center gap-space-unit-2 text-label-lg text-secondary font-bold">
+                <span>Partnership First</span>
+                <span class="material-symbols-outlined text-[16px]">favorite</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Highlight Banner for Affordable Solutions -->
+      <section class="px-margin-mobile lg:px-margin-desktop py-space-unit-6 bg-surface">
+        <div class="max-w-container-max mx-auto">
+          <div
+            class="bg-primary-container text-on-primary p-space-unit-8 rounded-xl flex flex-col lg:flex-row items-center justify-between gap-space-unit-6 relative overflow-hidden">
+            <div
+              class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-secondary/10 pointer-events-none blur-2xl">
+            </div>
+            <div class="flex flex-col gap-space-unit-3 max-w-2xl relative z-10">
+              <div
+                class="inline-flex items-center gap-space-unit-2 px-space-unit-3 py-space-unit-1 bg-surface-container-lowest/10 rounded-full w-fit">
+                <span class="material-symbols-outlined text-[18px] text-secondary-fixed">payments</span>
+                <span class="text-label-md uppercase tracking-wider text-secondary-fixed">Transparent Economics</span>
+              </div>
+              <h2 class="text-headline-lg text-on-primary">Affordable, Enterprise-Grade Solutions</h2>
+              <p class="text-body-lg text-on-primary-container">
+                Optimize your budget without compromising on capability. Our modular pricing structures and efficient
+                execution frameworks deliver maximum ROI for organizations of all sizes.
+              </p>
+            </div>
+            <div class="relative z-10 flex flex-col sm:flex-row gap-space-unit-3 shrink-0">
+              <a class="px-space-unit-6 py-space-unit-3 bg-secondary text-on-secondary text-label-lg font-bold rounded-lg hover:bg-secondary-container transition-colors text-center"
+                href="#contact">Request Pricing Quote</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Interactive FAQ / Comparison Accordion Section -->
+      <section class="px-margin-mobile lg:px-margin-desktop py-space-unit-8 bg-surface-container-low">
+        <div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-space-unit-8 items-start">
+          <div class="lg:col-span-5 flex flex-col gap-space-unit-4">
+            <span class="text-label-md uppercase tracking-wider text-secondary">Frequently Asked</span>
+            <h2 class="text-headline-lg text-on-surface">Why Enterprises Switch to Us</h2>
+            <p class="text-body-md text-on-surface-variant">
+              We understand the friction points of legacy providers. Here is how our operational framework eliminates
+              downtime, reduces overhead, and accelerates delivery timelines.
+            </p>
+            <div class="p-space-unit-6 bg-surface-container-lowest rounded-xl shadow-sm mt-space-unit-2">
+              <div class="flex items-center gap-space-unit-3 mb-space-unit-3">
+                <span class="material-symbols-outlined text-[32px] text-secondary">verified_user</span>
+                <div>
+                  <p class="text-headline-sm text-on-surface">Zero Migration Risk</p>
+                  <p class="text-body-sm text-on-surface-variant">Seamless transition protocols with zero downtime
+                    guarantee.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-7 flex flex-col gap-space-unit-4">
+            <div class="bg-surface-container-lowest p-space-unit-5 rounded-xl shadow-sm">
+              <h3 class="text-headline-sm text-on-surface mb-space-unit-2">How do you ensure service quality across
+                distributed teams?</h3>
+              <p class="text-body-md text-on-surface-variant">We enforce centralized governance, standardized CI/CD
+                pipelines, and rigorous peer code reviews combined with automated testing suites across all operational
+                hubs.</p>
+            </div>
+            <div class="bg-surface-container-lowest p-space-unit-5 rounded-xl shadow-sm">
+              <h3 class="text-headline-sm text-on-surface mb-space-unit-2">What does your 24/7 customer support entail?
+              </h3>
+              <p class="text-body-md text-on-surface-variant">Tier-1 through Tier-3 engineers stationed globally
+                providing immediate triage, proactive health monitoring, and direct SLA-backed incident resolution.</p>
+            </div>
+            <div class="bg-surface-container-lowest p-space-unit-5 rounded-xl shadow-sm">
+              <h3 class="text-headline-sm text-on-surface mb-space-unit-2">Can your solutions scale with rapid business
+                growth?</h3>
+              <p class="text-body-md text-on-surface-variant">Absolutely. Our cloud-native architectures are designed
+                for infinite horizontal and vertical scaling with automated load balancing.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CTA Section -->
+      <section class="px-margin-mobile lg:px-margin-desktop py-space-unit-8 bg-surface" id="contact">
+        <div class="max-w-container-max mx-auto text-center max-w-3xl">
+          <span class="text-label-md uppercase tracking-wider text-secondary">Get Started Today</span>
+          <h2 class="text-headline-xl text-on-surface mt-space-unit-2">Ready to Experience the Difference?</h2>
+          <p class="text-body-lg text-on-surface-variant mt-space-unit-3 mb-space-unit-6">
+            Schedule a consultation with our enterprise architects and discover a customized roadmap tailored to your
+            organization's goals.
+          </p>
+          <form class="flex flex-col sm:flex-row gap-space-unit-3 justify-center max-w-xl mx-auto">
+            <input
+              class="px-space-unit-4 py-space-unit-3 bg-surface-container-lowest text-on-surface border border-outline-variant rounded-lg flex-1 focus:outline-none focus:border-secondary"
+              placeholder="Enter your work email" required="" type="email" />
+            <button
+              class="px-space-unit-6 py-space-unit-3 bg-primary text-on-primary text-label-lg font-bold rounded-lg hover:bg-on-surface transition-colors"
+              type="submit">Connect With Us</button>
+          </form>
+          <p class="text-body-sm text-on-surface-variant mt-space-unit-3">No credit card required. Free 45-minute
+            architectural consultation.</p>
+        </div>
+      </section>
+    </div>
+  </main><a
+    class="fixed bottom-6 right-6 z-50 bg-secondary text-on-secondary p-3 rounded-full shadow-lg flex items-center justify-center hover:bg-secondary-container hover:text-on-secondary transition-all"
+    href="#whatsapp"><span class="material-symbols-outlined text-[24px]">chat</span></a>
+  <footer class="w-full bg-surface-container-low py-space-unit-6">
+    <div
+      class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop flex flex-col md:flex-row items-center justify-between gap-space-unit-4">
+      <div class="text-body-sm text-on-surface-variant text-center md:text-left">© 2026 Shashank A.R. All Rights
+        Reserved. Mandya, Karnataka, India.</div>
+      <div class="flex items-center gap-space-unit-4"><span
+          class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-on-surface">share</span><span
+          class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-on-surface">public</span><span
+          class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-on-surface">mail</span>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
